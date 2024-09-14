@@ -1,9 +1,5 @@
 using Trading.Infrastructure;
 using Trading.Application;
-using Microsoft.AspNetCore.Hosting;
-
-
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +14,24 @@ builder.Services.AddInfrastructureServices(builder.Configuration);
 
 
 builder.Services.AddMvc();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:4200")
+                       .AllowAnyMethod()
+                       .AllowAnyHeader()
+                       .AllowCredentials();
+
+        });
+});
+
+
+
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -31,7 +45,12 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+
+app.UseRouting();
+app.UseHttpsRedirection();
+
 app.Run();
+
 
 
 
