@@ -1,4 +1,4 @@
-# Trading
+# Trading Project
 
 # Steps to Run the Project =>
 1. Run the API Project
@@ -23,28 +23,34 @@
 		   
 
  # Techical Stack =>
-        1. ASP.NET Core 8.0 (with .NET 8.0)
-		2. Entity Framewok Core
-        3. AutoMapper
-        4. MediatR
-        5. FluentValidation
-        6. Xunit
-        7. FluentAssertions
-		8. Moq
-        8. Angular	
+	1. ASP.NET Core 8.0 (with .NET 8.0)
+	2. Entity Framewok Core
+	3. AutoMapper
+	4. MediatR
+	5. FluentValidation
+	6. Xunit
+	7. FluentAssertions
+	8. Moq
+	9. Angular	
 
 
- #Design Patterns
+ # Design Patterns
     1. Domain Driven Design
 	2. CQRS
 	3. Mediator
 	4. Repository 
 	5. Dependency injection
    
- #Project Architecure
+ # Project Architecure
     1. Trading.API is the presentatation layer
-    2. Trading.Application is the Application or Use Case layer where we write the business logic and often grouped into Commands and Queries, following CQRS
-    3. Trading.Domain is the project where we have kept all our entities which will be helpful when we are communicating with database or can leverage Domain Events to communicate changes to other parts of the system.
-    4. Trading.Infrastructure is the project which we will be responsible for implementing the repository class and it is concerned with EF, Files, Email, Web Services, Azure/AWS/GCP, etc is Infrastructure
+    
+	2. Trading.Application is the Application or Use Case layer where we write the business logic and often grouped 
+	   into Commands and Queries, following CQRS
+    
+	3. Trading.Domain is the project where we have kept all our entities which 
+	   will be helpful when we are communicating with database or can leverage Domain Events to communicate changes to other parts of the system.
+    
+	4. Trading.Infrastructure is the project which we will be responsible for 
+	   implementing the repository class and it is concerned with EF, Files, Email, Web Services, Azure/AWS/GCP, etc is Infrastructure
    
 	   
